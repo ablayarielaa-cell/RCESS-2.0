@@ -2455,7 +2455,7 @@ export default function Dashboard() {
                           ))}
                         </div>
                       </div>
-<div className="grid gap-4 rounded-xl border border-cyan-300/20 bg-cyan-300/[0.04] px-4 py-4">
+<div className="flex items-center justify-between rounded-xl border border-white/10 bg-black/30 px-4 py-3">
                         <div className="flex items-center justify-between gap-3">
                           <div>
                             <div className="text-sm font-medium">Viewer Tutorial Guide</div>
