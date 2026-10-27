@@ -46,10 +46,6 @@ export default function Login() {
                 Login
               </div>
 
-              <div className="mt-0.5 text-sm text-white/55">
-                General access portal (demo)
-              </div>
-
               <div className="mt-2 text-xs text-white/40">
                 Try: <span className="text-white/60">admin/admin</span>,{" "}
                 <span className="text-white/60">staff/staff</span>,{" "}
