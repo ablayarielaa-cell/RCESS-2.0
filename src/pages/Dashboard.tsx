@@ -1,7 +1,13 @@
 import { useEffect, useMemo, useState } from "react";
 import L from "leaflet";
+import type { ComponentType } from "react";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+
+// Type compatibility aliases for React Leaflet props in this project.
+const LeafletMapContainer = MapContainer as unknown as ComponentType<any>;
+const LeafletTileLayer = TileLayer as unknown as ComponentType<any>;
+const LeafletMarker = Marker as unknown as ComponentType<any>;
 import {
   Newspaper,
   PhoneCall,
@@ -505,23 +511,23 @@ function MultiLocationMap({ locations }: { locations: MapLocation[] }) {
     valid.reduce((sum, location) => sum + location.lng!, 0) / valid.length,
   ];
   return (
-    <MapContainer center={center} zoom={12} scrollWheelZoom className="h-[300px] sm:h-[420px] w-full z-0">
-      <TileLayer
+    <LeafletMapContainer center={center} zoom={12} scrollWheelZoom className="h-[300px] sm:h-[420px] w-full z-0">
+      <LeafletTileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <FitLocations locations={valid} />
       {valid.map((location, index) => (
-        <Marker key={location.id} position={[location.lat!, location.lng!]} icon={mapPinIcon}>
+        <LeafletMarker key={location.id} position={[location.lat!, location.lng!]} icon={mapPinIcon}>
           <Popup>
             <div style={{ minWidth: 150 }}>
               <strong>{index + 1}. {location.name || "Location"}</strong>
               <div>{location.address}</div>
             </div>
           </Popup>
-        </Marker>
+        </LeafletMarker>
       ))}
-    </MapContainer>
+    </LeafletMapContainer>
   );
 }
 
