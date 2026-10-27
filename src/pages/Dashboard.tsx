@@ -2611,12 +2611,7 @@ export default function Dashboard() {
           </Card>
         </div>
 
-        <div className="mt-6 flex items-center justify-between gap-3 text-xs text-white/35">
-          <div>RCESS Portal Prototype • Replace placeholders with official details.</div>
-          <Badge className="bg-white/10 text-white border border-white/15 hover:bg-white/10">
-            Digital Pass (moved off landing)
-          </Badge>
-        </div>
+        
       </div>
 
       {viewerTourOpen ? (
